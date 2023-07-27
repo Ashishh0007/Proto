@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+// This file defines the service for English to Hindi translation.
+
+package translation;
+
+// The TranslationRequest message represents a translation request.
+message TranslationRequest {
+  string source_text = 1; // The source text in English to be translated.
+}
+
+// The TranslationResponse message represents the translation response.
+message TranslationResponse {
+  string translated_text = 1; // The translated text in Hindi.
+}
+
+// The Translation service provides methods for English to Hindi translation.
+service TranslationService {
+  // Translates English text to Hindi.
+  rpc TranslateToHindi(TranslationRequest) returns (TranslationResponse);
+}
